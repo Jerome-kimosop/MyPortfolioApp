@@ -14,7 +14,7 @@ import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.component.html.H1;
 
-@Route("")
+@Route("/")
 public class MainView extends VerticalLayout {
 
     public MainView() {
@@ -27,13 +27,12 @@ public class MainView extends VerticalLayout {
         tabs.add(new Tab("PROJECTS"),new Tab("ABOUT"), new Tab("CONTACTS"));
         Div content = new Div();
             content.add("WEB DEVELOPER ON MISSION.");
-            content.setSizeFull();
         Button navigateButton = new Button("Go to About",
                 e -> UI.getCurrent().navigate("about"));
 
 
-        layout.add(tabs,navigateButton,content);
-        add(head,layout);
+        layout.add(tabs);
+        add(head,layout,navigateButton,content);
 
     }
 }
